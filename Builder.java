@@ -1,4 +1,4 @@
-package src;
+import src.Generator;
 
 public class Builder {
     public static void main(String[] args) {
