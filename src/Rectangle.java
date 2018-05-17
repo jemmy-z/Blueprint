@@ -1,9 +1,7 @@
 package src;
 
 import javax.swing.JPanel;
-import java.awt.Graphics;
-import java.awt.Color;
-import java.awt.Graphics2D;
+import java.awt.*;
 
 public class Rectangle extends JPanel {
     private int xPos, yPos;

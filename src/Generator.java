@@ -1,40 +1,30 @@
 package src;
 
-import javax.swing.JFrame;
+import javax.swing.*;
 import java.awt.Dimension;
 import java.awt.Color;
 
-public class Generator extends JFrame {
-    private String imageNumber;
+public class Generator {
+    private JFrame f;
+    private Rectangle r;
     private int width = 600;
     private int height = 600;
 
     public Generator() {
         super();
-        initiate();
-    }
-
-    public Generator(String number) {
-        super(number);
-        initiate();
-        imageNumber = number;
-    }
-
-    private void initiate() {
-        setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-        setSize(new Dimension(width, height));
-        setLocation(100, 100);
-        setBackground(new Color(255, 255, 255));
-        setUndecorated(true);
-        setResizable(false);
+        f = new JFrame();
+        f.setSize(new Dimension(width, height));
+        f.setPreferredSize(new Dimension(width, height));
+        f.setBackground(new Color(255, 255, 255));
     }
 
     public void buildRectangle(int w, int h) {
-        Rectangle r = new Rectangle(w, h, width, height);
-        add(r);
+        r = new Rectangle(w, h, width, height);
+        f.add(r);
+        f.pack();
     }
 
-    public void print() {
-        setVisible(true);
+    public JPanel getObject() {
+        return r;
     }
 }
