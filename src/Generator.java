@@ -6,11 +6,10 @@ import java.awt.Color;
 
 public class Generator {
     private JFrame f;
-    private Rectangle r;
     private int width = 600;
     private int height = 600;
 
-    public Generator() {
+    Generator() {
         super();
         f = new JFrame();
         f.setSize(new Dimension(width, height));
@@ -18,13 +17,18 @@ public class Generator {
         f.setBackground(new Color(255, 255, 255));
     }
 
-    public void buildRectangle(int w, int h) {
-        r = new Rectangle(w, h, width, height);
+    public JPanel buildRectangle(int w, int h) {
+        Rectangle r = new Rectangle(w, h, width, height);
         f.add(r);
         f.pack();
+        return r;
     }
 
-    public JPanel getObject() {
-        return r;
+    public JPanel buildTrapezoid(int w1, int w2, int h) {
+        return null;
+    }
+
+    public JPanel buildCircle(int r) {
+        return null;
     }
 }

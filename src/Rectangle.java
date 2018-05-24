@@ -7,7 +7,7 @@ public class Rectangle extends JPanel {
     private int xPos, yPos;
     private int width, height, frameWidth, frameHeight;
 
-    public Rectangle(int w, int h, int fw, int fh) {
+    Rectangle(int w, int h, int fw, int fh) {
         this.width = w;
         this.height = h;
         this.frameWidth = fw;

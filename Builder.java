@@ -1,31 +1,33 @@
 import src.Generator;
-import src.Rectangle;
 
 import javax.imageio.ImageIO;
+import javax.swing.JPanel;
 import java.awt.image.BufferedImage;
 import java.io.File;
 import java.awt.Component;
-
+import java.io.IOException;
+import java.util.Random;
 
 public class Builder {
-    public static void main(String[] args) throws Exception {
+    public static void main(String[] args) {
+        Random rm = new Random();
         for (int i = 0; i < 20; i++) {
             Generator g = new Generator();
-            g.buildRectangle(100 + i, 50 + i);
-            getSaveSnapShot(g.getObject(), "images/rooms/room_" + i + ".jpeg");
+            JPanel o = g.buildRectangle(rm.nextInt(300) + 50, rm.nextInt(300) + 50);
+            getSaveSnapShot(o, "images/rooms/room_" + i + ".jpeg");
         }
-
-    }
-    public static BufferedImage getScreenShot(Component component) {
-        BufferedImage image = new BufferedImage(component.getWidth(), component.getHeight(), BufferedImage.TYPE_INT_RGB);
-        component.paint(image.getGraphics());
-        return image;
+        System.exit(0);
     }
 
-    public static void getSaveSnapShot(Component component, String fileName) throws Exception {
-        BufferedImage img = getScreenShot(component);
-        ImageIO.write(img, "jpeg", new File(fileName));
+    private static void getSaveSnapShot(Component component, String fileName) {
+        try {
+            BufferedImage image = new BufferedImage(component.getWidth(), component.getHeight(), BufferedImage.TYPE_INT_RGB);
+            component.paint(image.getGraphics());
+            File outputFile = new File(fileName);
+            ImageIO.write(image, "jpeg", outputFile);
+        } catch (IOException e) {
+            System.out.println("File not found.");
+            System.exit(0);
+        }
     }
-
-
 }
