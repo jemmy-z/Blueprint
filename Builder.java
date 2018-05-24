@@ -13,7 +13,7 @@ public class Builder {
         Random rm = new Random();
         for (int i = 0; i < 20; i++) {
             Generator g = new Generator();
-            JPanel o = g.buildRectangle(rm.nextInt(300) + 50, rm.nextInt(300) + 50);
+            JPanel o = g.buildStandardRoom(rm.nextInt(300) + 50, rm.nextInt(300) + 50);
             getSaveSnapShot(o, "images/rooms/room_" + i + ".jpeg");
         }
         System.exit(0);

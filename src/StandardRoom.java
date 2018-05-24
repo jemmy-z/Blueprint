@@ -3,11 +3,11 @@ package src;
 import javax.swing.JPanel;
 import java.awt.*;
 
-public class Rectangle extends JPanel {
+public class StandardRoom extends JPanel {
     private int xPos, yPos;
     private int width, height, frameWidth, frameHeight;
 
-    Rectangle(int w, int h, int fw, int fh) {
+    StandardRoom(int w, int h, int fw, int fh) {
         this.width = w;
         this.height = h;
         this.frameWidth = fw;

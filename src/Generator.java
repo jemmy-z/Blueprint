@@ -9,7 +9,7 @@ public class Generator {
     private int width = 600;
     private int height = 600;
 
-    Generator() {
+    public Generator() {
         super();
         f = new JFrame();
         f.setSize(new Dimension(width, height));
@@ -17,18 +17,18 @@ public class Generator {
         f.setBackground(new Color(255, 255, 255));
     }
 
-    public JPanel buildRectangle(int w, int h) {
-        Rectangle r = new Rectangle(w, h, width, height);
+    public JPanel buildStandardRoom(int w, int h) {
+        StandardRoom r = new StandardRoom(w, h, width, height);
         f.add(r);
         f.pack();
         return r;
     }
 
-    public JPanel buildTrapezoid(int w1, int w2, int h) {
+    public JPanel buildAuditorium(int w1, int w2, int h) {
         return null;
     }
 
-    public JPanel buildCircle(int r) {
+    public JPanel buildRoundRoom(int r) {
         return null;
     }
 }
